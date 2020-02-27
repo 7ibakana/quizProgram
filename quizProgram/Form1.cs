@@ -45,6 +45,7 @@ namespace quizProgram
                 btnCheckAnswer.Text = "Quiz over!";
                 MessageBox.Show($"Your score is {Score}", "Quiz Over!");
             }
+        }
         private void CheckAnswer()
         {
             //Compare to answer stored in Questions SortedList
@@ -53,21 +54,18 @@ namespace quizProgram
             {
                 KeyValuePair<String, bool> question = Questions.ElementAt(QuestionNumber);
                 bool correctAnswer = question.Value;
-                if correctAnswer = question.Value;
+                if (correctAnswer = true && rdoTrue.Checked == true)
                 {
                     Score++;
                 }
-                if ( correctAnswer == false && rdoFalse.Checked == true)
+                if (correctAnswer == false && rdoFalse.Checked == true)
                 {
                     Score++;
                 }
                 lblScore.Text = $"Score: {Score}";
             }
-        
+
         }
-
-    }
-
         private void btnCheckAnswer_Click(object sender, EventArgs e)
         {
             //Make sure at least one checkbox is checked
@@ -78,3 +76,4 @@ namespace quizProgram
             }
         }
     }
+}
